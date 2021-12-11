@@ -1,6 +1,12 @@
 # revisao-estudos-java
 Revisão e estudo da linguagem de programação Java em aplicações.
 
+
+Uma classe é uma especificação de um tipo, definindo atributos e comportamentos.
+Um objeto é uma instância de uma classe onde podemos definir valores para seus atributos.
+Para criar uma instância precisamos usar a palavra chave new.
+
+
 Pilares da Programação Orientada a Objetos:
 
 1) Abstração: Onde é definido um nome único do Objeto/Classe, define também as características do Objeto/classe propriedades, também se define as ações do que Objeto/Classe irá executar que são chamados de métodos.
