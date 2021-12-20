@@ -1,10 +1,11 @@
 # revisao-estudos-java
 Revisão e estudo da linguagem de programação Java em aplicações.
 
-
 Uma classe é uma especificação de um tipo, definindo atributos e comportamentos.
 Um objeto é uma instância de uma classe onde podemos definir valores para seus atributos.
 Para criar uma instância precisamos usar a palavra chave new.
+
+Atributos do tipo static são atributos da classe da qual ele está sendo declarado, ou seja é como se fosse uma variavél de uso "global", métodos estaticos seguem a mesma linha, são métodos da classe.
 
 
 Pilares da Programação Orientada a Objetos:
