@@ -6,10 +6,14 @@ Um objeto é uma instância de uma classe onde podemos definir valores para seus
 Para criar uma instância precisamos usar a palavra chave new.
 
 modificadores de visibilidade:
-	private - apenas visível dentro da classe
-	protected - visível dentro da classe e também para as filhas
-	public - visível em todo lugar
-	Repare também que protected é relacionado com a herança.
+
+private - apenas visível dentro da classe
+
+protected - visível dentro da classe e também para as filhas
+
+public - visível em todo lugar
+
+Repare também que protected é relacionado com a herança.
 
 Atributos do tipo static são atributos da classe da qual ele está sendo declarado, ou seja é como se fosse uma variavél de uso "global", métodos estaticos seguem a mesma linha, são métodos da classe.
 
