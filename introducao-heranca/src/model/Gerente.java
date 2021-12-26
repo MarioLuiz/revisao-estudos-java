@@ -2,7 +2,11 @@ package model;
 
 public class Gerente extends Funcionario{
 	
-	int senha;
+	private int senha;
+	
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
 	
 	public boolean autentica(int senha) {
 	    if (this.senha == senha) {
@@ -11,8 +15,8 @@ public class Gerente extends Funcionario{
 	        return false;
 	    }
 	}
-
-	public void setSenha(int senha) {
-		this.senha = senha;
+	// Reaproveitamento de metodo da classe mae/super
+	public double getBonificacao() {
+	    return super.getBonificacao()+ super.getSalario();
 	}
 }

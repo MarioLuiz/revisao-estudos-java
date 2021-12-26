@@ -2,9 +2,9 @@ package model;
 
 public class Funcionario {
 	
-	String nome;
-	String cpf;
-	Double salario;
+	private String nome;
+	private String cpf;
+	private Double salario;
 	
 	public Funcionario() {
 		

@@ -14,6 +14,7 @@ public class Main {
 
         System.out.println(mario.getNome());
         System.out.printf("%.2f",mario.getBonificacao());
+        //mario.salario = 300.0;
         
         Gerente g1 = new Gerente();
         g1.setNome("\nMarco");
@@ -28,6 +29,8 @@ public class Main {
         boolean autenticou = g1.autentica(2222);
 
         System.out.println(autenticou);
+        
+        System.out.println(g1.getBonificacao());
 
 	}
 
