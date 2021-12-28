@@ -27,5 +27,10 @@ Pilares da Programação Orientada a Objetos:
 3) Herança: Onde é possível herdar as características e métodos de uma classe onde, isso auxilia no reaproveitamento de código.
 
 4) Polimorfismo: O polimorfismo permite herdar um método de classe pai e atribuir uma nova implementação para o método pré-definido, isso inclui a sobrecarga de método, onde pode ser definido um nome igual para mais de um método na classe, mas é necessário estarem com os argumentos do método diferentes.
+ O que é legal saber sobre:
+- objetos não mudam de tipo;
+- a referência pode mudar, e aí entra o polimorfismo;
+- o polimorfismo permite usar referências mais genéricas para a comunicação com um objeto;
+- o uso de referências mais genéricas permite desacoplar sistemas.
 
 Test
