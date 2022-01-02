@@ -19,6 +19,6 @@ public class Gerente extends Funcionario {
 	// Reaproveitamento de metodo da classe mae/super
 	public double getBonificacao() {
 		System.out.println("Chamando o método bonificacao do GERENTE");
-		return super.getBonificacao() + super.getSalario();
+		return super.getSalario();
 	}
 }

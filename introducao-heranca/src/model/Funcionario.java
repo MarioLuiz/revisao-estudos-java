@@ -1,6 +1,7 @@
 package model;
 
-public class Funcionario {
+// Classes abstratas não podem ser instanciadas
+public abstract class Funcionario {
 	
 	private String nome;
 	private String cpf;
@@ -10,9 +11,8 @@ public class Funcionario {
 		
 	}
 	
-	public double getBonificacao() {
-	    return this.salario * 0.1;
-	}
+	// método sem corpo
+	public abstract double getBonificacao();
 	
 	public String getNome() {
 		return nome;

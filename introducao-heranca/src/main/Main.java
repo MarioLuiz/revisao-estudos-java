@@ -6,7 +6,7 @@ import model.Gerente;
 public class Main {
 
 	public static void main(String[] args) {
-		Funcionario mario = new Funcionario();
+		Gerente mario = new Gerente();
 
 		mario.setNome("Mario Luiz");
 		mario.setCpf("696998756-54");
