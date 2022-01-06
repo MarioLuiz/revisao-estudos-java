@@ -7,9 +7,7 @@ Para criar uma instância precisamos usar a palavra chave new.
 
 modificadores de visibilidade:
 - private - apenas visível dentro da classe.
-
 - protected - visível dentro da classe e também para as filhas, repare também que protected é relacionado com a herança de classes.
-
 - public - visível em todo lugar.
 
 Sobre classes abstratas:
@@ -19,6 +17,14 @@ Classes do tipo abstract, são classes que podem ser herdadas por outras classes
 - Classes abstratas: podem ter atributos, podem ter métodos concretos (com implementação), podem ter métodos abstratos (sem implementação) e não podem ser instanciadas.
 
 Atributos do tipo static são atributos da classe da qual ele está sendo declarado, ou seja é como se fosse uma variavél de uso "global", métodos estaticos seguem a mesma linha, são métodos da classe.
+
+
+Sobre Interfaces:
+- Ela é um contrato onde quem assina se responsabiliza por implementar esses métodos (cumprir o contrato).
+- Todos os métodos de uma interface são abstratos.
+- Garante que todos os métodos de classes que implementam uma interface possam ser chamados com segurança.
+- Com composições e interfaces teremos mais flexibilidade com nosso código, já que não nos prenderemos ao acoplamento que a herança propõe.
+- Através do uso de Interfaces podemos contornar a falta de herança multipla que não esta presente no Java.
 
 Pilares da Programação Orientada a Objetos:
 
@@ -31,7 +37,8 @@ Pilares da Programação Orientada a Objetos:
 - Construtores não são herdados.
 - Um construtor da classe mãe pode ser chamado através do super().
 - Não existe herança múltipla em Java.
-- Interfaces são uma alternativa a herança referente ao polimorfismo
+- Interfaces são uma alternativa a herança referente ao polimorfismo.
+- A herança captura o que é comum e isola aquilo que é diferente entre classes.
 
 4) Polimorfismo: O polimorfismo permite herdar um método de classe pai e atribuir uma nova implementação para o método pré-definido, isso inclui a sobrecarga de método, onde pode ser definido um nome igual para mais de um método na classe, mas é necessário estarem com os argumentos do método diferentes.
  O que é legal saber sobre:
