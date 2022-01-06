@@ -9,6 +9,9 @@ modificadores de visibilidade:
 - private - apenas visível dentro da classe.
 - protected - visível dentro da classe e também para as filhas, repare também que protected é relacionado com a herança de classes.
 - public - visível em todo lugar.
+- Para saber mais acesse: https://pt.stackoverflow.com/questions/17015/qual-o-uso-de-uma-vari%C3%A1vel-est%C3%A1tica-ou-final-em-java
+- Para saber mais acesse: https://www.devmedia.com.br/modificadores-de-acesso-do-java/27065
+
 
 Sobre classes abstratas:
 Classes do tipo abstract, são classes que podem ser herdadas por outras classes, porém a classe do tipo abstract não podem ser instanciadas. Para instanciar, devemos criar primeiro uma classe filha não abstrata, os métodos abstratos não possuem corpo (implementação), apenas definem a assinatura.
