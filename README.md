@@ -10,6 +10,7 @@ modificadores de visibilidade:
 - protected - visível dentro da classe e também para as filhas, repare também que protected é relacionado com a herança de classes.
 - public - visível em todo lugar.
 - static - Atributos do tipo static são atributos da classe da qual ele está sendo declarado, ou seja é como se fosse uma variavél de uso "global", métodos estaticos seguem a mesma linha, são métodos da classe.
+- final - O modificador FINAL torna o atributo da classe uma constante e, só pode ser inicializado uma única vez, ou diretamente na declaração da classe ou no método construtor.
 - Para saber mais acesse: https://pt.stackoverflow.com/questions/17015/qual-o-uso-de-uma-vari%C3%A1vel-est%C3%A1tica-ou-final-em-java
 - Para saber mais acesse: https://www.devmedia.com.br/modificadores-de-acesso-do-java/27065
 
