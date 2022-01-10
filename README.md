@@ -31,7 +31,7 @@ Pilares da Programação Orientada a Objetos:
 
 1) Abstração: Onde é definido um nome único do Objeto/Classe, define também as características do Objeto/classe propriedades, também se define as ações do que Objeto/Classe irá executar que são chamados de métodos.
 
-2) Encapsulamento: É a técnica que adiciona segurança a aplicação, pois esconde as propriedades do objeto com declaração dos atributos como privados e podem sem acessados por meio de métodos públicos como Getter e Setter, para não acessar diretamente os atributos da classe/objeto, assim podemos garantir que a responsabilidade de gerenciar os atributos da classe seja feito por ela e não delegado a outras.
+2) Encapsulamento: É a técnica que adiciona segurança a aplicação, pois esconde as propriedades do objeto com declaração dos atributos como privados e podem sem acessados por meio de métodos públicos como Getter e Setter, para não acessar diretamente os atributos da classe/objeto, assim podemos garantir que a responsabilidade de gerenciar os atributos da classe é a própria classe e não deve ser delegado a terceiros.
 
 3) Herança: Onde é possível herdar as características e métodos de uma classe onde, isso auxilia no reaproveitamento de código.
  O que é legal saber sobre:
