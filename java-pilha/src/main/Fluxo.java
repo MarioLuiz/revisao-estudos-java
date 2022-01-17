@@ -6,15 +6,22 @@ public class Fluxo {
 		System.out.println("Ini do main");
 		try {
 			metodo1();
-		} catch (Exception e) {
-			System.out.println("Deu Ruim : " + e);
-		}
+		} catch(ArithmeticException ex) {
+	        //String msg = ex.getMessage();
+	        //System.out.println("ArithmeticException " + msg);
+	        ex.printStackTrace();
+	    } catch(NullPointerException ex) {
+	        String msg = ex.getMessage();
+	        System.out.println("NullPointerException " + msg);
+	    }
 		System.out.println("Fim do main");
 	}
 
 	private static void metodo1() {
 		System.out.println("Ini do metodo1");
 		metodo2();
+		Conta c = null;
+		c.deposita();
 		System.out.println("Fim do metodo1");
 	}
 
@@ -24,5 +31,6 @@ public class Fluxo {
 			System.out.println(i);
 			int a = i / 0;
 		}
+		
 	}
 }
