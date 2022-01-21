@@ -14,7 +14,7 @@ public class Fluxo {
 		System.out.println("Fim do main");
 	}
 
-	private static void metodo1() {
+	private static void metodo1() throws MinhaException {
 		System.out.println("Ini do metodo1");
 		metodo2();
 		Conta c = null;
@@ -22,7 +22,7 @@ public class Fluxo {
 		System.out.println("Fim do metodo1");
 	}
 
-	private static void metodo2() {
+	private static void metodo2() throws MinhaException {
 		System.out.println("Ini do metodo2");
 		
 		throw new MinhaException("Deu Ruim");
