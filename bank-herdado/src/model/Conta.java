@@ -19,7 +19,7 @@ public abstract class Conta {
 
 	public abstract void deposita(double valor);
 
-	public void saca(double valor) {
+	public void saca(double valor) throws SaldoInsufucienteException {
 		if (this.saldo < valor) {
 			// problema
 			throw new SaldoInsufucienteException("Saldo: " + this.saldo + " Valor a ser sacado: " + valor);
@@ -27,7 +27,7 @@ public abstract class Conta {
 		this.saldo -= valor;
 	}
 
-	public void transfere(double valor, Conta destino) {
+	public void transfere(double valor, Conta destino) throws SaldoInsufucienteException {
 		this.saca(valor);
 		destino.deposita(valor);
 	}

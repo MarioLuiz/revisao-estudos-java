@@ -2,10 +2,11 @@ package main;
 
 import model.ContaCorrente;
 import model.ContaPoupanca;
+import model.SaldoInsufucienteException;
 
 public class TesteContas {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SaldoInsufucienteException {
 		ContaCorrente cc = new ContaCorrente(3030, 301);
 		cc.deposita(100.0);
 		
