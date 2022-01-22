@@ -11,10 +11,10 @@ public class ContaCorrente extends Conta implements Tributavel{
 	}
 	
 	@Override
-	public boolean saca(double valor) {
+	public void saca(double valor) {
 		double valorSacar = valor + 0.20;
 		// TODO Auto-generated method stub
-		return super.saca(valorSacar);
+		super.saca(valorSacar);
 	}
 
 	@Override
