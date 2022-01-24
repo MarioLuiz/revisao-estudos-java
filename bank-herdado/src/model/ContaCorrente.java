@@ -27,4 +27,9 @@ public class ContaCorrente extends Conta implements Tributavel{
 		return super.getSaldo() * 0.01;
 	}
 
+	@Override
+	public void close() {
+		System.out.println("Fechando...");
+	}
+
 }

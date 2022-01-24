@@ -11,4 +11,9 @@ public class ContaPoupanca extends Conta {
 		super.saldo += valor;	
 	}
 
+	@Override
+	public void close() {
+		System.out.println("Fechando...");
+	}
+
 }

@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Conta {
+public abstract class Conta implements AutoCloseable{
 
 	protected double saldo;
 	private int agencia;
@@ -9,12 +9,19 @@ public abstract class Conta {
 	private static int total = 0;
 
 	public Conta(int agencia, int numero) {
+		if(agencia < 1) {
+            throw new IllegalArgumentException("Agencia inválida");
+        }
+
+        if(numero < 1) {
+            throw new IllegalArgumentException("Numero da conta inválido");
+        }
+        
 		Conta.total++;
 		System.out.println("O total de contas é " + Conta.total);
 		this.agencia = agencia;
 		this.numero = numero;
-		// this.saldo = 100;
-		System.out.println("Estou criando uma conta " + this.numero);
+		System.out.println("Estou criando uma conta N°: " + this.numero + " Na Agencia: " + this.agencia);
 	}
 
 	public abstract void deposita(double valor);
