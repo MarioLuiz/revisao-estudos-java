@@ -1,4 +1,4 @@
-package model;
+package br.com.bytebank.banco.model;
 
 public class SaldoInsufucienteException extends Exception{
 

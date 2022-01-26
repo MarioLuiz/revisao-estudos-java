@@ -1,14 +1,14 @@
-package teste;
+package br.com.bytebank.banco.teste;
 
-import model.ContaPoupanca;
-import model.SaldoInsufucienteException;
+import br.com.bytebank.banco.model.ContaPoupanca;
+import br.com.bytebank.banco.model.SaldoInsufucienteException;
 
 public class TesteContas {
 
 	public static void main(String[] args) throws SaldoInsufucienteException {
 		
 		// Full Qualified name FQN
-		model.ContaCorrente cc = new model.ContaCorrente(3030, 301);
+		br.com.bytebank.banco.model.ContaCorrente cc = new br.com.bytebank.banco.model.ContaCorrente(3030, 301);
 		cc.deposita(100.0);
 		
 		ContaPoupanca cp = new ContaPoupanca(3020, 302);

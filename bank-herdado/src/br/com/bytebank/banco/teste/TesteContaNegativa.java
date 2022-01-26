@@ -1,7 +1,7 @@
-package teste;
+package br.com.bytebank.banco.teste;
 
-import model.Conta;
-import model.ContaCorrente;
+import br.com.bytebank.banco.model.Conta;
+import br.com.bytebank.banco.model.ContaCorrente;
 
 public class TesteContaNegativa {
 	public static void main(String[] args) throws Exception {

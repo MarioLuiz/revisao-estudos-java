@@ -1,4 +1,4 @@
-package model;
+package br.com.bytebank.banco.model;
 
 public class AcaoBolsa implements Tributavel {
 
