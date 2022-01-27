@@ -12,7 +12,5 @@ public class TesteContaNegativa {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		
-		
 	}
 }
