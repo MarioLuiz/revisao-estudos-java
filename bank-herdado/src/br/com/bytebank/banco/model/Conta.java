@@ -1,5 +1,11 @@
 package br.com.bytebank.banco.model;
 
+/**
+ * Classe representa a moldura de uma conta
+ * 
+ * @author mario
+ *
+ */
 public abstract class Conta implements AutoCloseable{
 
 	protected double saldo;
@@ -7,7 +13,13 @@ public abstract class Conta implements AutoCloseable{
 	private int numero;
 	private Cliente titular;
 	private static int total = 0;
-
+	
+	/**
+	 * Construtor para inicializar o objeto conta a partir da agencia e numero
+	 * 
+	 * @param agencia
+	 * @param numero
+	 */
 	public Conta(int agencia, int numero) {
 		if(agencia < 1) {
             throw new IllegalArgumentException("Agencia inválida");
@@ -25,7 +37,13 @@ public abstract class Conta implements AutoCloseable{
 	}
 
 	public abstract void deposita(double valor);
-
+	
+	/**
+	 * Valor precisa ser maior do que o saldo
+	 * 
+	 * @param valor
+	 * @throws SaldoInsufucienteException
+	 */
 	public void saca(double valor) throws SaldoInsufucienteException {
 		if (this.saldo < valor) {
 			// problema
