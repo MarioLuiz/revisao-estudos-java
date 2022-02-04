@@ -32,4 +32,8 @@ public class ContaCorrente extends Conta implements Tributavel{
 		System.out.println("Fechando...");
 	}
 
+	@Override
+	public String toString() {
+		return "ContaCorrente ->  " + super.toString() ;
+	}
 }

@@ -97,4 +97,9 @@ public abstract class Conta implements AutoCloseable{
 		return Conta.total;
 	}
 
+	@Override
+	public String toString() {
+		return "Conta [ saldo = " + saldo + ", agencia = " + agencia + ", numero = " + numero + ", titular = " + titular + " ]";
+	}
+
 }

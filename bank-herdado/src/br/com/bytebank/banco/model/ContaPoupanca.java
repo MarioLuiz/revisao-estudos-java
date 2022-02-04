@@ -15,5 +15,10 @@ public class ContaPoupanca extends Conta {
 	public void close() {
 		System.out.println("Fechando...");
 	}
+	
+	@Override
+	public String toString() {
+		return "ContaPoupanca ->  " + super.toString() ;
+	}
 
 }
