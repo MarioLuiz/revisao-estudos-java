@@ -1,9 +1,5 @@
 package br.com.bytebank.banco.teste;
 
-import br.com.bytebank.banco.model.Conta;
-import br.com.bytebank.banco.model.ContaCorrente;
-import br.com.bytebank.banco.model.ContaPoupanca;
-
 public class TesteArrayString {
 
 	public static void main(String[] args) {
