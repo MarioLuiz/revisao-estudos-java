@@ -30,10 +30,10 @@ public abstract class Conta implements AutoCloseable{
         }
         
 		Conta.total++;
-		System.out.println("O total de contas é " + Conta.total);
+		//System.out.println("O total de contas é " + Conta.total);
 		this.agencia = agencia;
 		this.numero = numero;
-		System.out.println("Estou criando uma conta N°: " + this.numero + " Na Agencia: " + this.agencia);
+		//System.out.println("Estou criando uma conta N°: " + this.numero + " Na Agencia: " + this.agencia);
 	}
 
 	public abstract void deposita(double valor);
