@@ -1,5 +1,7 @@
 package br.com.bytebank.banco.model;
 
+import java.util.Objects;
+
 /**
  * Classe representa a moldura de uma conta
  * 
@@ -95,6 +97,23 @@ public abstract class Conta implements AutoCloseable{
 
 	public static int getTotal() {
 		return Conta.total;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(agencia, numero);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Conta other = (Conta) obj;
+		return agencia == other.agencia && numero == other.numero;
 	}
 
 	@Override
