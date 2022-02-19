@@ -5,8 +5,12 @@ public class Cliente {
     private String nome;
     private String cpf;
     private String profissao;
-    
-    public Cliente(String nome, String cpf, String profissao) {
+        
+    public Cliente() {
+
+	}
+
+	public Cliente(String nome, String cpf, String profissao) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.profissao = profissao;
@@ -31,4 +35,10 @@ public class Cliente {
         this.profissao = profissao;
     }
 
+	@Override
+	public String toString() {
+		return "Cliente [ nome = " + nome + ", cpf = " + cpf + ", profissao = " + profissao + " ]";
+	}
+    
+    
 }
