@@ -1,6 +1,7 @@
 package br.com.bytebank.banco.teste.util;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -46,20 +47,27 @@ public class Teste {
 			System.out.println(conta);
 		}
 
-		NumeroDaContaComparator numeroDaContacomparator = new NumeroDaContaComparator();
-		TitularDaContaComparator titularDaContacomparator = new TitularDaContaComparator();
+//		NumeroDaContaComparator numeroDaContacomparator = new NumeroDaContaComparator();
+//		TitularDaContaComparator titularDaContacomparator = new TitularDaContaComparator();
+		
+		// Ordenando pela ordem natural que foi implementada na classe Conta
+		lista.sort(null);
 
 		System.out.println("<---------------->");
-		
-		lista.sort(titularDaContacomparator);
-		
+
+//		lista.sort(new TitularDaContaComparator());
+
+//		Collections.sort(lista, new TitularDaContaComparator());
+//		Collections.reverse(lista);
+//		Collections.sort(lista);
+
 		for (Conta conta : lista) {
 			System.out.println(conta);
 		}
 	}
 }
 
-class TitularDaContaComparator implements Comparator<Conta>{
+class TitularDaContaComparator implements Comparator<Conta> {
 
 	@Override
 	public int compare(Conta c1, Conta c2) {
@@ -67,20 +75,24 @@ class TitularDaContaComparator implements Comparator<Conta>{
 		String nomeC2 = c2.getTitular().getNome();
 		return nomeC1.compareToIgnoreCase(nomeC2);
 	}
-	
+
 }
 
 class NumeroDaContaComparator implements Comparator<Conta> {
 
 	@Override
-	public int compare(Conta o1, Conta o2) {
-		if (o1.getNumero() < o2.getNumero()) {
-			return -1;
-		}
-		if (o1.getNumero() > o2.getNumero()) {
-			return 1;
-		}
-		return 0;
+	public int compare(Conta c1, Conta c2) {
+//		if (c1.getNumero() < c2.getNumero()) {
+//			return -1;
+//		}
+//		if (c1.getNumero() > c2.getNumero()) {
+//			return 1;
+//		}
+//		return 0;
+
+//		return c1.getNumero() - c2.getNumero();
+
+		return Integer.compare(c1.getNumero(), c2.getNumero());
 	}
 
 }

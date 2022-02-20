@@ -8,7 +8,7 @@ import java.util.Objects;
  * @author mario
  *
  */
-public abstract class Conta implements AutoCloseable{
+public abstract class Conta implements AutoCloseable, Comparable<Conta>{
 
 	protected double saldo;
 	private int agencia;
@@ -119,6 +119,11 @@ public abstract class Conta implements AutoCloseable{
 	@Override
 	public String toString() {
 		return "Conta [ saldo = " + saldo + ", agencia = " + agencia + ", numero = " + numero + ", titular = " + titular + " ]";
+	}
+	
+	@Override
+	public int compareTo(Conta outra) {
+		return Double.compare(this.saldo, outra.saldo);
 	}
 
 }
