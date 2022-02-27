@@ -9,23 +9,25 @@ public class TesteLeitura {
 
 	public static void main(String[] args) throws IOException {
 		// Fluxo de entrada com arquivo
-		
-		//Encontrando arquivo
+		// Padrão de projeto decorator
+		// Encontrando arquivo
 		FileInputStream fis = new FileInputStream("lorem.txt");
-		
-		// convertando de binario para um reader
+
+		// convertando bits para Caracteres
 		InputStreamReader isr = new InputStreamReader(fis);
-		
-		// utilizando um buffer para carregar a string
-		BufferedReader br =  new BufferedReader(isr);
-		
+
+		// Juntando varios caracteres dentro de uma linha
+		BufferedReader br = new BufferedReader(isr);
+
 		// salvando primeira linha do doc
 		String linha = br.readLine();
-		
-		System.out.println(linha);
-		
+
+		while (linha != null) {
+			System.out.println(linha);
+			linha = br.readLine();
+		}
+
 		br.close();
-		
 
 	}
 
