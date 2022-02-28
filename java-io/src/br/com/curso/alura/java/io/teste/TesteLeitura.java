@@ -9,7 +9,7 @@ public class TesteLeitura {
 
 	public static void main(String[] args) throws IOException {
 		// Fluxo de entrada com arquivo
-		// Padrão de projeto decorator
+		// Padrao de projeto decorator
 		// Encontrando arquivo
 		FileInputStream fis = new FileInputStream("lorem.txt");
 
@@ -21,7 +21,7 @@ public class TesteLeitura {
 
 		// salvando primeira linha do doc
 		String linha = br.readLine();
-
+		
 		while (linha != null) {
 			System.out.println(linha);
 			linha = br.readLine();
