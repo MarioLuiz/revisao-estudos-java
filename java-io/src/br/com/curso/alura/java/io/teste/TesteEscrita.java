@@ -15,9 +15,7 @@ public class TesteEscrita {
 		// Criando o arquivo ou sobreencrendo, caso ja exista
 		OutputStream fos = new FileOutputStream("lorem2.txt");
 
-		
 		Writer osw = new OutputStreamWriter(fos);
-
 
 		BufferedWriter bw = new BufferedWriter(osw);
 
