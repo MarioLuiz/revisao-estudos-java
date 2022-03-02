@@ -1,44 +1,36 @@
 package br.com.curso.alura.java.io.teste;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 
 public class TesteCopiarArquivoTexto {
 
 	public static void main(String[] args) throws IOException {
 		
-		// Encontrando arquivo que será copiado
-		FileInputStream fis = new FileInputStream("lorem.txt"); //System.in; // new FileInputStream("lorem.txt")
-		// convertando bits para Caracteres
-		InputStreamReader isr = new InputStreamReader(fis);
-		// Juntando varios caracteres dentro de uma linha
-		BufferedReader br = new BufferedReader(isr);
+		
+		FileWriter fw = new FileWriter("lorem2.txt");
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		bw.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod");
 
-		// Criando ou subscrevendo o arquivo
-		OutputStream fos = new FileOutputStream("lorem3copia.txt"); // System.out; // new FileOutputStream("lorem2.txt");
-		Writer osw = new OutputStreamWriter(fos);
-		BufferedWriter bw = new BufferedWriter(osw);
+		bw.newLine();
+		//bw.write(System.lineSeparator());
 		
-		// salvando primeira linha do doc
-		String linha = br.readLine();
+		bw.write("tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,");
 		
-		while (linha != null && !linha.isEmpty()) {
-			bw.write(linha);
-			bw.newLine();
-			bw.flush();
-			linha = br.readLine();
-		}
+		bw.newLine();
+		//bw.write(System.lineSeparator());
 		
-		// fechando os arquivos
+		bw.write("quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo ");
+		
+		bw.newLine();
+		//bw.write(System.lineSeparator());
+		
+		bw.write("consequat. Duis aute irure dolor in reprehenderit in voluptate velit");
+		
+		// fechando o arquivo
 		bw.close();
-		br.close();
 
 	}
 
