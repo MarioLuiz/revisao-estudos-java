@@ -10,7 +10,7 @@ public class TesteLeitura2 {
 	public static void main(String[] args) throws IOException {
 		// Fluxo de entrada com arquivo
 		// Padrao de projeto decorator
-		// Encontrando arquivo
+		// Encontrando arquivo pelo nome dele
 		FileInputStream fis = new FileInputStream("lorem.txt");
 
 		// convertando bits para Caracteres
