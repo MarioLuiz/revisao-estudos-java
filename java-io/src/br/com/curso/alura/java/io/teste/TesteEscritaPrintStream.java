@@ -14,7 +14,6 @@ public class TesteEscritaPrintStream {
 		
 		while(scanner.hasNextLine()) {
 			String  linha = scanner.nextLine();
-			//System.out.println(linha);
 			
 			Scanner linhaScanner = new Scanner(linha);
 			linhaScanner.useLocale(Locale.US);
@@ -26,6 +25,7 @@ public class TesteEscritaPrintStream {
             String titular = linhaScanner.next();
             double saldo = linhaScanner.nextDouble();
 			
+			// Criando um String format para facilitar e padrinizar a saida dos dados
             String valorFormatado = String.format(new Locale("pt","BR"),"%s - %04d - %d - %s - %.2f %n", tipoConta,agencia,numero,titular,saldo);
             System.out.println(valorFormatado);
             
