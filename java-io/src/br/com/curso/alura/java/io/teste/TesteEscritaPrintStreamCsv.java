@@ -2,11 +2,12 @@ package br.com.curso.alura.java.io.teste;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class TesteEscritaPrintStream {
+public class TesteEscritaPrintStreamCsv {
 
 	public static void main(String[] args) throws IOException {
 		

@@ -14,7 +14,7 @@ public class TesteLeitura {
 		FileInputStream fis = new FileInputStream("lorem.txt");
 
 		// convertando bits para Caracteres
-		InputStreamReader isr = new InputStreamReader(fis);
+		InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
 
 		// Juntando varios caracteres dentro de uma linha
 		BufferedReader br = new BufferedReader(isr);

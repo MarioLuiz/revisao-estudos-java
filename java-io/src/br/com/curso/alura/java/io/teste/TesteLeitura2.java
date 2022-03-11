@@ -1,34 +1,32 @@
 package br.com.curso.alura.java.io.teste;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.File;
+import java.util.Locale;
+import java.util.Scanner;
 
 public class TesteLeitura2 {
 
-	public static void main(String[] args) throws IOException {
-		// Fluxo de entrada com arquivo
-		// Padrao de projeto decorator
-		// Encontrando arquivo pelo nome dele
-		FileInputStream fis = new FileInputStream("lorem.txt");
+	public static void main(String[] args) throws Exception {
 
-		// convertando bits para Caracteres
-		InputStreamReader isr = new InputStreamReader(fis);
+		Scanner scanner = new Scanner(new File("contas.csv"));
+      while(scanner.hasNextLine()) {
+              String linha = scanner.nextLine();
+              //System.out.println(linha);
 
-		// Juntando varios caracteres dentro de uma linha
-		BufferedReader br = new BufferedReader(isr);
+              Scanner linhaScanner = new Scanner(linha);
+              linhaScanner.useLocale(Locale.US);
+              linhaScanner.useDelimiter(",");
 
-		// salvando primeira linha do doc
-		String linha = br.readLine();
-		
-		while (linha != null) {
-			System.out.println(linha);
-			linha = br.readLine();
-		}
+              String tipoConta = linhaScanner.next();
+              int agencia = linhaScanner.nextInt();
+              int numero = linhaScanner.nextInt();
+              String titular = linhaScanner.next();
+              double saldo = linhaScanner.nextDouble();
 
-		br.close();
+              System.out.format(new Locale("pt","BR"), "%s - %04d0%08d, %20s: %08.2f %n",
+                      tipoConta, agencia, numero, titular, saldo );
 
+              linhaScanner.close();
+      }
 	}
-
 }
