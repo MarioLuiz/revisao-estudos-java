@@ -1,5 +1,6 @@
 package br.com.bytebank.banco.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -8,12 +9,12 @@ import java.util.Objects;
  * @author mario
  *
  */
-public abstract class Conta implements AutoCloseable, Comparable<Conta>{
+public abstract class Conta implements AutoCloseable, Comparable<Conta>, Serializable{
 
 	protected double saldo;
 	private int agencia;
 	private int numero;
-	private Cliente titular;
+	private Cliente titular; //basta adicionar transient a frente do tipo de acesso, que a classe nao precisara ser Serializada
 	private static int total = 0;
 	
 	/**
