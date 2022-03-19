@@ -35,16 +35,42 @@ public class TestandoListas {
 		// Java 8
 		aulas.forEach(aula -> {
 		    System.out.println("Percorrendo:");
-		    System.out.println("Aula " + aula);
+		    System.out.println("--- " + aula);
 		});
+		
+		aulas.add("Aumentando nosso conhecimento");
 		
 		// Ordenando
 		Collections.sort(aulas);
 		
 		aulas.forEach(aula -> {
 		    System.out.println("Percorrendo:");
-		    System.out.println("Aula " + aula);
+		    System.out.println("+++ " + aula);
 		});
+		
+		
+		String curso1 = "Java 8: Tire proveito dos novos recursos da linguagem";
+        String curso2 = "Apache Camel";
+        String curso3 = "Certificacao Java SE 8 Programmer I";
+        String curso4 = "Babando pelo Java 8";
+        String curso5 = "Quero me tornar e melhor versão de mim mesmo";
+
+        ArrayList<String> cursos = new ArrayList<>();
+        cursos.add(curso1);
+        cursos.add(curso2);
+        cursos.add(curso3);        
+        cursos.add(curso4);        
+        cursos.add(curso5);        
+        
+        cursos.remove(1);
+        
+        System.out.println(cursos);
+        
+        System.out.println("O primeiro curso da lista eh o: " + cursos.get(0));
+        
+        Collections.sort(cursos);
+        System.out.println("----------- Lista Ordenada a baixo -------");
+        cursos.forEach(curso -> System.out.println(curso));
 	}
 
 }
