@@ -7,6 +7,9 @@ public class Aula implements Comparable<Aula>{
 	private String titulo;
 	private int tempo;
 	
+	public Aula() {
+	}
+
 	public Aula(String titulo, int tempo) {
 		this.titulo = titulo;
 		this.tempo = tempo;
