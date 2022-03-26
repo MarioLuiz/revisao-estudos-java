@@ -17,11 +17,13 @@ public class TestaAluno {
 		alunos.add("Jose Benedito");
 		alunos.add("Kaike Lobo");
 		alunos.add("Kamile Vitoria Lobo");
-		
+		System.out.println("O tamanho da coleção é de: "  + alunos.size());
 		boolean marioEstaMatriculado = alunos.contains("Mario Luiz");
 		System.out.println("O aluno Mario está Matriculado ? " + marioEstaMatriculado);
+		alunos.add("Mario Luiz");
+		System.out.println("O tamanho da coleção é de: "  + alunos.size());
 		alunos.remove("Jose Benedito");
-		
+		System.out.println("O tamanho da coleção é de: "  + alunos.size());
 		alunos.forEach(aluno -> System.out.println(aluno));
 		
 		//System.out.println(alunos);
