@@ -57,6 +57,6 @@ public class Curso {
 
 	@Override
 	public String toString() {
-		return "Curso [ nome = " + nome + ", instrutor = " + instrutor + ", aulas = " + aulas + " ]";
+		return "Curso [ nome = " + nome + ", instrutor = " + instrutor + ", Tempo total = " + getTempoTotal() + ", aulas = " + aulas + " ]";
 	}
 }
