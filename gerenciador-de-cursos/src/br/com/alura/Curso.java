@@ -69,6 +69,10 @@ public class Curso {
 	public void matricula(Aluno aluno) {
 		this.alunos.add(aluno);
 	}
+	
+	public boolean estaMatriculado(Aluno a1) {
+		return this.alunos.contains(a1);
+	}
 
 	@Override
 	public String toString() {
