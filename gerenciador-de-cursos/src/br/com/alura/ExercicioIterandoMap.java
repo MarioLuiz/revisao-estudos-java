@@ -1,7 +1,9 @@
 package br.com.alura;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class ExercicioIterandoMap {
 
@@ -12,7 +14,7 @@ public class ExercicioIterandoMap {
 		pessoas.put(27, "Fabio Pimentel");
 		pessoas.put(19, "Silvio Mattos");
 		pessoas.put(23, "Romulo Henrique");
-		
+
 		System.out.println("Utilizando forEach");
 		// Usando ForEach
 		pessoas.forEach((k, v) -> System.out.println(k + "  = " + v));
@@ -28,6 +30,18 @@ public class ExercicioIterandoMap {
 		pessoas.keySet().forEach(idade -> {
 			System.out.println(idade + " = " + pessoas.get(idade));
 		});
+		System.out.println();
 
+		// Acessando somente as chaves por Set
+		System.out.println("Acessando somente as chaves por Set");
+		Set<Integer> chaves = pessoas.keySet();
+		chaves.forEach(key -> System.out.println("Key = " + key));
+		System.out.println();
+
+		// Acessando somente os conteudos do map via Collection
+		System.out.println("Acessando somente o conteudo do map via Collection");
+		Collection<String> nomes = pessoas.values();
+		nomes.forEach(nome -> System.out.println("nome = " + nome));
+		System.out.println();
 	}
 }

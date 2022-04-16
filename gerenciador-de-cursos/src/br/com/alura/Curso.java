@@ -85,11 +85,10 @@ public class Curso {
 		return "Curso [ nome = " + nome + ", instrutor = " + instrutor + ", Tempo total = " + getTempoTotal() + ", aulas = " + aulas + " ]";
 	}
 
-	public Aluno buscaMatricula(int numero) {
+	public Aluno buscaMatriculado(int numero) {
 		if(!matriculaParaAluno.containsKey(numero)) {
 			throw new NoSuchElementException("matricula nao econtrada " + numero);
 		}
-		
 		return matriculaParaAluno.get(numero);
 	}
 }

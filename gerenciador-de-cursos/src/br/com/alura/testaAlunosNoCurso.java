@@ -21,7 +21,7 @@ public class testaAlunosNoCurso {
 		
 		System.out.println("Quem e o aluno da matricula 1717 ?");
 		
-		Aluno aluno = javaColecoes.buscaMatricula(1717);
+		Aluno aluno = javaColecoes.buscaMatriculado(1717);
 		System.out.println("Aluno : " + aluno);
 
 	}
