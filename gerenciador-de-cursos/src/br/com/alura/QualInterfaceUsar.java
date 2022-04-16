@@ -3,7 +3,7 @@ package br.com.alura;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class qualInterfaceUsar {
+public class QualInterfaceUsar {
 
 	public static void main(String[] args) {
 		// Depende muito do problema, na duvida declare uma collection que podemos usar o
