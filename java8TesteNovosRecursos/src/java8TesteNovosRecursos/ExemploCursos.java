@@ -3,6 +3,7 @@ package java8TesteNovosRecursos;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class ExemploCursos {
 	public static void main(String[] args) {
@@ -22,7 +23,19 @@ public class ExemploCursos {
 
 		int somaAlunoCursoComMaisCemAlunos = cursos.stream().filter(c -> c.getAlunos() >= 100)
 				.mapToInt(Curso::getAlunos).sum();
-
+		
+		System.out.println();
 		System.out.println("Total de alunos em Cursos com mais de 100 estudantes: " + somaAlunoCursoComMaisCemAlunos);
+		cursos.stream().filter(c -> (c.getAlunos() > 50)).forEach(c -> System.out.println(c.getNome()));
+		
+		System.out.println();
+		System.out.println("Todos os nomes dos cursos");
+		Stream<String> nomes = cursos.stream().map(curso -> curso.getNome());
+		nomes.forEach(nome -> System.out.println(nome));
+		
+		cursos.stream()
+		   .filter(c -> c.getAlunos() > 50)
+		   .map(Curso::getAlunos)
+		   .forEach(System.out::println);
 	}
 }
