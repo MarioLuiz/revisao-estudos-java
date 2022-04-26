@@ -3,6 +3,9 @@ package java8TesteNovosRecursos;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ExemploCursos {
@@ -37,5 +40,15 @@ public class ExemploCursos {
 		   .filter(c -> c.getAlunos() > 50)
 		   .map(Curso::getAlunos)
 		   .forEach(System.out::println);
+		
+		System.out.println();
+		cursos.stream().filter(c -> (c.getAlunos() > 100)).findAny().ifPresent(c -> System.out.println(c.getNome()));
+		
+		List<Curso> cursosFiltrados = cursos.stream().filter(c -> (c.getAlunos() > 100)).collect(Collectors.toList());
+		
+		System.out.println();
+		Map<String, Integer> cursosFiltradosMap = cursos.stream().filter(c -> (c.getAlunos() > 100)).collect(Collectors.toMap(
+				c-> c.getNome(), c -> c.getAlunos()));
+		cursosFiltradosMap.forEach((nome, aluno) -> System.out.println(nome + " tem " + aluno + " alunos"));
 	}
 }
