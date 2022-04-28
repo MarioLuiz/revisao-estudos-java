@@ -26,29 +26,39 @@ public class ExemploCursos {
 
 		int somaAlunoCursoComMaisCemAlunos = cursos.stream().filter(c -> c.getAlunos() >= 100)
 				.mapToInt(Curso::getAlunos).sum();
-		
+
 		System.out.println();
 		System.out.println("Total de alunos em Cursos com mais de 100 estudantes: " + somaAlunoCursoComMaisCemAlunos);
 		cursos.stream().filter(c -> (c.getAlunos() > 50)).forEach(c -> System.out.println(c.getNome()));
-		
+
 		System.out.println();
 		System.out.println("Todos os nomes dos cursos");
 		Stream<String> nomes = cursos.stream().map(curso -> curso.getNome());
 		nomes.forEach(nome -> System.out.println(nome));
-		
-		cursos.stream()
-		   .filter(c -> c.getAlunos() > 50)
-		   .map(Curso::getAlunos)
-		   .forEach(System.out::println);
-		
+
+		cursos.stream().filter(c -> c.getAlunos() > 50).map(Curso::getAlunos).forEach(System.out::println);
+
 		System.out.println();
 		cursos.stream().filter(c -> (c.getAlunos() > 100)).findAny().ifPresent(c -> System.out.println(c.getNome()));
-		
+
 		List<Curso> cursosFiltrados = cursos.stream().filter(c -> (c.getAlunos() > 100)).collect(Collectors.toList());
+
+		System.out.println();
+		Map<String, Integer> cursosFiltradosMap = cursos.stream().filter(c -> (c.getAlunos() > 100))
+				.collect(Collectors.toMap(c -> c.getNome(), c -> c.getAlunos()));
+		cursosFiltradosMap.forEach((nome, aluno) -> System.out.println(nome + " tem " + aluno + " alunos"));
+
+		System.out.println();
+		cursos.stream().filter(c -> (c.getAlunos() > 50)).findFirst()
+				.ifPresent(c -> System.out.println("Primeiro curso com mais de 50 alunos é: " + c.getNome()));
 		
 		System.out.println();
-		Map<String, Integer> cursosFiltradosMap = cursos.stream().filter(c -> (c.getAlunos() > 100)).collect(Collectors.toMap(
-				c-> c.getNome(), c -> c.getAlunos()));
-		cursosFiltradosMap.forEach((nome, aluno) -> System.out.println(nome + " tem " + aluno + " alunos"));
+		//Integer quantidadeCusos = (int) cursos.stream().count();
+		Double mediaQuantidaDeAlunosCurso = cursos.stream().mapToInt(c -> c.getAlunos()).average().getAsDouble();
+		System.out.println("Média de alunos em nos cursos: " + mediaQuantidaDeAlunosCurso);
+		
+		System.out.println();
+		List<Curso> CursosComMaisDe50Alunos = cursos.stream().filter(c -> (c.getAlunos() > 50)).collect(Collectors.toList());
+		CursosComMaisDe50Alunos.forEach(c -> System.out.println(c.getNome()));
 	}
 }
