@@ -33,6 +33,9 @@ public class Datas {
 		
 		LocalTime intervalo = LocalTime.of(12, 30);
 		System.out.println(intervalo);
+		
+		LocalDate diaQueNasci = LocalDate.of(1992, 02, 24);
+		System.out.println("O dia em que tudo se deu inicio: " + diaQueNasci.format(formatador));
 	}
 
 }
