@@ -3,6 +3,7 @@ package br.com.imdb;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -15,18 +16,49 @@ import org.json.JSONObject;
 public class consultaImdb {
 
 	private static HttpURLConnection conn;
-
+	
 	public static void main(String[] args) throws IOException {
-		// Creditos
-		// https://medium.com/javarevisited/how-to-send-http-get-request-and-parse-json-data-into-string-using-java-3c0cf7eeebbc
+		List<Filme> filmes = new ArrayList<Filme>();
+		String response = requestImdb();
+		filmes = parse(response, filmes);
 		
-		String keyImdb = "";
+		PrintWriter writer = new PrintWriter("content.html");
+		HtmlGenerator htmlGenerator = new HtmlGenerator(writer);
+		htmlGenerator.head();
+		htmlGenerator.generate(filmes);
+		
+		writer.close();
+		
+		filmes.forEach(f -> System.out.println(f));
+	}
+	
+	
+	public static List<Filme> parse(String responseBody, List<Filme> filmes) {
+		JSONObject obj = new JSONObject(responseBody);
+		JSONArray arr = obj.getJSONArray("items");
+		for (int i = 0 ; i < arr.length(); i++) {
+			Filme filme = new Filme();
+			filme.setId(arr.getJSONObject(i).getString("id"));
+			filme.setRank(arr.getJSONObject(i).getString("rank"));
+			filme.setTitle(arr.getJSONObject(i).getString("title"));
+			filme.setFullTitle(arr.getJSONObject(i).getString("fullTitle"));
+			filme.setYear(arr.getJSONObject(i).getString("year"));
+			filme.setImage(arr.getJSONObject(i).getString("image"));
+			filme.setCrew(arr.getJSONObject(i).getString("crew"));
+			filme.setImDbRating(arr.getJSONObject(i).getString("imDbRating"));
+			filme.setImDbRatingCount(arr.getJSONObject(i).getString("imDbRatingCount"));
+			filmes.add(filme);
+		}
+		return filmes;
+	}
+	
+	public static String requestImdb() {
+		// Creditos Consulta http
+		// https://medium.com/javarevisited/how-to-send-http-get-request-and-parse-json-data-into-string-using-java-3c0cf7eeebbc
 		BufferedReader reader;
 		String line;
 		StringBuilder responseContent = new StringBuilder();
-		String response = "";
-		List<Filme> filmes = new ArrayList<Filme>();
-		
+		String keyImdb = "";
 		try {
 			URL url = new URL("https://imdb-api.com/en/API/Top250Movies/" + keyImdb);
 			conn = (HttpURLConnection) url.openConnection();
@@ -52,8 +84,7 @@ public class consultaImdb {
 				}
 				reader.close();
 			}
-			//System.out.println(responseContent.toString());
-			response = responseContent.toString();
+			return responseContent.toString();
 			
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -62,28 +93,6 @@ public class consultaImdb {
 		} finally {
 			conn.disconnect();
 		}
-		filmes = parse(responseContent.toString(), filmes);
-		filmes.forEach(f -> System.out.println(f));
-
+		return null;
 	}
-	
-	public static List<Filme> parse(String responseBody, List<Filme> filmes) {
-		JSONObject obj = new JSONObject(responseBody);
-		JSONArray arr = obj.getJSONArray("items");
-		Filme filme = new Filme();
-		for (int i = 0 ; i < arr.length(); i++) {
-			filme.setId(arr.getJSONObject(i).getString("id"));
-			filme.setRank(arr.getJSONObject(i).getString("rank"));
-			filme.setTitle(arr.getJSONObject(i).getString("title"));
-			filme.setFullTitle(arr.getJSONObject(i).getString("fullTitle"));
-			filme.setYear(arr.getJSONObject(i).getString("year"));
-			filme.setImage(arr.getJSONObject(i).getString("image"));
-			filme.setCrew(arr.getJSONObject(i).getString("crew"));
-			filme.setImDbRating(arr.getJSONObject(i).getString("imDbRating"));
-			filme.setImDbRatingCount(arr.getJSONObject(i).getString("imDbRatingCount"));
-			filmes.add(filme);
-		}
-		return filmes;
-	}
-
 }
