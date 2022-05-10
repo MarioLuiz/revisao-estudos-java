@@ -1,6 +1,6 @@
 package br.com.imdb;
 
-public class Filme {
+public class Movie {
 	
 	private String id;
 	private String rank;
@@ -12,7 +12,7 @@ public class Filme {
 	private String imDbRating;
 	private String imDbRatingCount;
 	
-	public Filme() {
+	public Movie() {
 		
 	}
 	public String getId() {

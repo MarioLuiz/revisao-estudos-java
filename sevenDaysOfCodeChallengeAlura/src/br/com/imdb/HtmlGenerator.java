@@ -25,7 +25,7 @@ public class HtmlGenerator {
 		writer.println(head);
 	}
 	
-	public void generate(List<Filme> filmes) {
+	public void generate(List<Movie> filmes) {
 		String divTemplate =
 				"""
 				<div class=\"card text-white bg-dark mb-3\" style=\"max-width: 18rem;\">
