@@ -1,6 +1,6 @@
 package br.com.imdb;
 
-public class Movie {
+public class Movie implements Content{
 	
 	private String id;
 	private String rank;
@@ -69,6 +69,27 @@ public class Movie {
 	public void setImDbRatingCount(String imDbRatingCount) {
 		this.imDbRatingCount = imDbRatingCount;
 	}
+	
+	@Override
+	public String title() {
+		return getTitle();
+	}
+	
+	@Override
+	public String urlImage() {	
+		return getImage();
+	}
+	
+	@Override
+	public String rating() {	
+		return getImDbRating();
+	}
+	
+	@Override
+	public String year() {
+		return getYear();
+	}
+	
 	@Override
 	public String toString() {
 		return "Filme [id = " + id + ", rank = " + rank + ", title = " + title + ", fullTitle = " + fullTitle + ", year = " + year
