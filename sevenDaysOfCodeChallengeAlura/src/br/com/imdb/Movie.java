@@ -96,4 +96,8 @@ public class Movie implements Content{
 				+ ", image = " + image + ", crew = " + crew + ", imDbRating = " + imDbRating + ", imDbRatingCount = "
 				+ imDbRatingCount + "]";
 	}
+	@Override
+	public int compareTo(Content outro) {
+		return this.rating().compareTo(outro.rating());
+	}
 }

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class consultaImdb {
@@ -14,6 +15,8 @@ public class consultaImdb {
 		List<Movie> filmes = new ArrayList<Movie>();
 		String json = new ImdbApiClient(conn).request();
 		filmes = new ImdbMovieJsonParser(json).parse();
+		
+		Collections.sort(filmes);
 		
 		PrintWriter writer = new PrintWriter("content.html");
 		HtmlGenerator htmlGenerator = new HtmlGenerator(writer);
